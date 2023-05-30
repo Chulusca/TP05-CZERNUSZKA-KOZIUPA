@@ -31,16 +31,13 @@ public class HomeController : Controller
             return View("Habitacion"+sala);
         }
     }
-    public IActionResult Comenzar(){
-      return View("Habitacion"+Escape.GetEstadoJuego());  
-    }
-        public IActionResult Tutorial(){
+    public IActionResult Tutorial(){
         return View();
     }
     public IActionResult Victoria(){
         return View();
     }
-        public IActionResult Creditos(){
+    public IActionResult Creditos(){
         return View();
     }
     public IActionResult Privacy()
