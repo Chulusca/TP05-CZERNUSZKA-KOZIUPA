@@ -17,7 +17,29 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    public IActionResult Habitacion(int sala, string clave){
+        if(sala != Escape.GetEstadoJuego()){
+            return View("Habitacion"+Escape.GetEstadoJuego());
+        }
+        else if(sala == 4){
+            return View("Victoria");
+        }
+        else if(Escape.ResolverSala(sala, clave)){
+            return View(Escape.GetEstadoJuego());
+        }
+        else{
+            return View("Habitacion"+sala);
+        }
+    }
+        public IActionResult Tutorial(){
+        return View();
+    }
+    public IActionResult Victoria(){
+        return View();
+    }
+        public IActionResult Creditos(){
+        return View();
+    }
     public IActionResult Privacy()
     {
         return View();
