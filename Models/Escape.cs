@@ -8,6 +8,7 @@ namespace TP05_CZERNUSZKA_KOZIUPA.Models;
 public static class Escape{
     private static string[] incognitasSalas {get; set;} = new string [4];
     private static int estadoJuego {get;set;} = 1;
+    private static int cantIntentos {get;set;} = 0;
     private static void inicializarJuego(){
         incognitasSalas[0] = "3";
         incognitasSalas[1] = "3";
@@ -24,8 +25,11 @@ public static class Escape{
             if(incognitasSalas[sala-1] == clave){
                 resuelta = true;
                 estadoJuego++;
-            }
+            }else cantIntentos++;
         }
         return resuelta;
+    }
+    public static int GetCantIntentos(){
+        return cantIntentos;
     }
 }

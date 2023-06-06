@@ -37,6 +37,7 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Victoria(){
+        ViewBag.intentos = Escape.GetCantIntentos();
         return View();
     }
     public IActionResult Creditos(){
