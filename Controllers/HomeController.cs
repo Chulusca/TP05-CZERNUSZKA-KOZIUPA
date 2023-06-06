@@ -25,14 +25,14 @@ public class HomeController : Controller
             return View("Victoria");
         }
         else if(Escape.ResolverSala(sala, clave)){
-            return View(Escape.GetEstadoJuego());
+            return View("Habitacion"+Escape.GetEstadoJuego());
         }
         else{
             return View("Habitacion"+sala);
         }
     }
     public IActionResult Comenzar(){
-        return View("Habitacion"+Escape.GetEstadoJuego());
+        return View("Habitacion"+1);
     }
     public IActionResult Tutorial(){
         return View();
