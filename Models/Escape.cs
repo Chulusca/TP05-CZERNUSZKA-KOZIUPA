@@ -17,15 +17,15 @@ public static class Escape{
     public static int GetEstadoJuego(){
         return estadoJuego;
     }
-    public static bool ResolverSala(int sala, string incognita){
-        bool esCorrecta = false;
+    public static bool ResolverSala(int sala, string clave){
+        bool resuelta = false;
         if(sala == estadoJuego){
             if(incognitasSalas[0] == null) inicializarJuego();
-            if(incognitasSalas[sala--] == incognita){
-                esCorrecta = true;
+            if(incognitasSalas[sala-1] == clave){
+                resuelta = true;
                 estadoJuego++;
             }
         }
-        return esCorrecta;
+        return resuelta;
     }
 }

@@ -1,7 +1,12 @@
 <div class="mt-4 p-5 bg-primary text-white rounded">
-  <h1>Primera Sala</h1>
-  <p></p>
-  
-
-  <a href ='@Url.Action("Habitacion")' target="_blank" type="button" class="btn btn-secondary">Jugar</a>
+    <h1>Cuarta Sala</h1>
+    <p></p>
+    <img>
+    <form class="mt-5" action='@Url.Action("Habitacion", "Home")'>
+        <input type="hidden" name="sala" value = "4">
+        <input type="text" name="clave" value="">
+        <input type="submit" class="btn btn-secondary">
+        <button class = "btn btn-secondary" onclick="alert('Pista:')"> Pista</button>
+        <button class = "btn btn-secondary" onclick="alert('Pista:')"> Otra Pista</button>
+    </form>
 </div>

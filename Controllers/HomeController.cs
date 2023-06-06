@@ -18,18 +18,17 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Habitacion(int sala, string clave){
-        if(sala != Escape.GetEstadoJuego()){
-            return View("Habitacion"+Escape.GetEstadoJuego());
+        if(sala == Escape.GetEstadoJuego()){
+            if(Escape.ResolverSala(sala, clave)){
+                if(Escape.GetEstadoJuego() > 4) return View("Victoria");
+                else return View("Habitacion"+Escape.GetEstadoJuego());
+            }
+            else{
+                ViewBag.Error = "Respuesta Incorrecta";
+                return View("Habitacion"+Escape.GetEstadoJuego());
+            }
         }
-        else if(sala == 4){
-            return View("Victoria");
-        }
-        else if(Escape.ResolverSala(sala, clave)){
-            return View("Habitacion"+Escape.GetEstadoJuego());
-        }
-        else{
-            return View("Habitacion"+sala);
-        }
+        else return View("Habitacion"+Escape.GetEstadoJuego());
     }
     public IActionResult Comenzar(){
         return View("Habitacion"+1);
